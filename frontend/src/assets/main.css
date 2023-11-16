@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  /* background: #1d2024; */
+}
+.nav-item .nav-link {
+  font-weight: bold;
+}
+
+.carousel-inner img {
+  height: 400px;
+  width: 200px;
+}
+/* .carousel slide carousel-fade */
