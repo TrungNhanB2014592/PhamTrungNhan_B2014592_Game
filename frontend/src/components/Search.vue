@@ -15,7 +15,7 @@
           >
             <img
               :key="image"
-              :src="`http://localhost:4000/images/${result.images}`"
+              :src="`http://localhost:4001/images/${result.images}`"
               :alt="result.productname"
               class="product-image"
             />

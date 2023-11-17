@@ -98,7 +98,7 @@
             </div>
 
             <div class="d-lg-none">
-              <div class="text-white">
+              <div class="text-black">
                 <router-link class="nav-link" to="/login"
                   >Đăng Nhập</router-link
                 >
@@ -253,12 +253,15 @@ export default {
 </script>
 <style scoped>
 .test-2 {
-  color: white;
+  /* color: white; */
   background: white;
 }
 
 .auth {
   color: white;
+}
+.nav-link {
+  color: aquamarine;
 }
 
 .icon-phone {
@@ -274,5 +277,8 @@ export default {
 .logo img {
   width: 170px;
   background-color: beige;
+}
+.btn:hover {
+  color: aquamarine;
 }
 </style>

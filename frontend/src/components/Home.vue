@@ -42,7 +42,7 @@
             <div class="card card-noibat mt-3" @click="viewProduct(product)">
               <div class="card-image card-img">
                 <img
-                  :src="`http://localhost:4000/images/${product.images}`"
+                  :src="`http://localhost:4001/images/${product.images}`"
                   :alt="productname"
                   class="product-image text-center"
                 />
@@ -83,7 +83,7 @@
             <div class="card card-noibat mt-3" @click="viewProduct(item)">
               <div class="card-image card-img">
                 <img
-                  :src="`http://localhost:4000/images/${item.images}`"
+                  :src="`http://localhost:4001/images/${item.images}`"
                   :alt="productname"
                   class="product-image text-center"
                 />
@@ -515,5 +515,8 @@ h3 {
 }
 #radio4:checked ~ .navigation-auto.auto-btn4 {
   background: #40d3dc;
+}
+h6 {
+  color: black;
 }
 </style>

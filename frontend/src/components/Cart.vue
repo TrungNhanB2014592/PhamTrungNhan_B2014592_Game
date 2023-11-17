@@ -38,7 +38,7 @@
             <td>
               <img
                 :key="image"
-                :src="`http://localhost:4000/images/${item.images}`"
+                :src="`http://localhost:4001/images/${item.images}`"
                 :alt="item.productname"
                 class="product-image"
               />

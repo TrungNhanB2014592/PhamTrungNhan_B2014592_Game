@@ -38,13 +38,16 @@
                 v-for="product in products"
                 :key="product._id"
               >
-                <img
-                  :key="image"
-                  :src="`http://localhost:4000/images/${product.images}`"
-                  :alt="product.productname"
-                  class="product-image"
-                />
-                <div class="product card-body text-center">
+                <div class="wrapper-img">
+                  <img
+                    :key="image"
+                    :src="`http://localhost:4001/images/${product.images}`"
+                    :alt="product.productname"
+                    class="product-image"
+                  />
+                </div>
+
+                <div class="product text-center">
                   <p class="card-name">{{ product.productname }}</p>
                   <p class="card-price">
                     {{
@@ -245,9 +248,20 @@ export default {
     #fefefe 100%
   );
 }
+
+.wrapper-img {
+  width: inherit;
+  height: 200px;
+}
 .product-image {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.row > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .item {
@@ -302,7 +316,7 @@ li p::after {
   overflow: hidden;
   position: relative;
   width: 224px;
-  height: 350px;
+  /* height: 350px; */
   margin: 4px;
 }
 
@@ -339,11 +353,11 @@ li p::after {
   display: block;
   background-color: #446084;
   padding: 21px 1px;
-  margin: 6px -32px;
-  position: absolute;
+  /* margin: 6px -32px; */
+  /* position: absolute; */
   transition: 0.25s ease-in-out;
   opacity: 0.85;
-  width: 250px;
+  /* width: 250px; */
 }
 
 .icon {
@@ -361,6 +375,9 @@ li p::after {
 .card-name,
 .card-price {
   font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-price {
@@ -368,7 +385,7 @@ li p::after {
 }
 
 .product {
-  margin: 50px 0;
+  /* margin: 50px 0; */
 }
 
 .sort {

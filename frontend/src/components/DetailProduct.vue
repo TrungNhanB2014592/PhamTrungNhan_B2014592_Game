@@ -6,7 +6,7 @@
         <div class="card">
           <img
             :key="image"
-            :src="`http://localhost:4000/images/${product.images}`"
+            :src="`http://localhost:4001/images/${product.images}`"
             :alt="product.productname"
             class="product-image"
           />
@@ -19,7 +19,7 @@
 
         <p class="text-price">{{ Price }}&#8363;</p>
 
-        <div class="d-flex">
+        <div class="">
           <p class="mt-3">Số lượng:</p>
           <button class="button-quantity" @click="decreaseQuantity">-</button>
           <button class="button-quantity-number">{{ quantity }}</button>
@@ -48,7 +48,7 @@
             <div class="card col-sm-4" v-for="item in items" :key="item._id">
               <img
                 :key="image"
-                :src="`http://localhost:4000/images/${item.images}`"
+                :src="`http://localhost:4001/images/${item.images}`"
                 :alt="item.productname"
                 class="item-image mx-auto"
               />

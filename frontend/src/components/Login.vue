@@ -104,7 +104,7 @@ export default {
         console.log("truoc khi dang nhap", authStore.isLoggedIn);
 
         axios
-          .post("http://localhost:4000/api/login", {
+          .post("http://localhost:4001/api/login", {
             email: email.value,
             password: password.value,
           })

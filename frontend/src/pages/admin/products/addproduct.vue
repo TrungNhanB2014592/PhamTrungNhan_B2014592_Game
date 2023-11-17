@@ -164,7 +164,7 @@ export default {
         console.log("imageURL", this.imageURL);
 
         axios
-          .post("http://localhost:4000/api/products", formData)
+          .post("http://localhost:4001/api/products", formData)
 
           .then((response) => {
             if (response.status === 200) {

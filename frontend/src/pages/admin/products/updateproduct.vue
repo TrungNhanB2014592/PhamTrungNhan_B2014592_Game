@@ -103,7 +103,7 @@
               />
               <img
                 v-else-if="imageURL"
-                :src="`http://localhost:4000/images/${imageURL}`"
+                :src="`http://localhost:4001/images/${imageURL}`"
                 :alt="productname"
                 class="product-image"
               />

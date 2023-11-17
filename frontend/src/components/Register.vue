@@ -148,7 +148,7 @@ export default {
       } else {
         this.showError = false;
         axios
-          .post("http://localhost:4000/api/register", {
+          .post("http://localhost:4001/api/register", {
             fullname: this.fullname,
             email: this.email,
             password: this.password,

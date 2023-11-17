@@ -95,7 +95,7 @@ export default {
         showError.value = false;
 
         axios
-          .post("http://localhost:4000/api/login/admin", {
+          .post("http://localhost:4001/api/login/admin", {
             email: email.value,
             password: password.value,
           })
