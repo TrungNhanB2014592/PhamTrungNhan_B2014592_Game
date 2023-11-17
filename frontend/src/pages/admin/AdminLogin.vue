@@ -41,7 +41,7 @@
     <div class="toggle-container">
       <div class="toggle">
         <div class="toggle-panel toggle-right">
-          <h1>Hello, Friend!</h1>
+          <img src="/img/img1.jpg" alt="" />
         </div>
       </div>
     </div>

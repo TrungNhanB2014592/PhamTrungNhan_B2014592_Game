@@ -9,16 +9,16 @@
             <input type="radio" name="radio-btn" id="radio3" />
             <input type="radio" name="radio-btn" id="radio4" />
             <div class="slide first">
-              <img src="/img/img1.jpg" alt="" />
+              <img src="/img/21.jpg" alt="" />
             </div>
             <div class="slide">
               <img src="/img/img2.jpg" alt="" />
             </div>
             <div class="slide">
-              <img src="/img/img3.jpg" alt="" />
+              <img src="/img/img19.jpg" alt="" />
             </div>
             <div class="slide">
-              <img src="/img/img1.jpg" alt="" />
+              <img src="/img/22.jpg" alt="" />
             </div>
             <div class="navigation-auto">
               <div class="auto-btn1"></div>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <!-- <div class="container">
         <div class="row text-center content-2">
           <h3 class="text-center title-category">
             DANH MỤC GAME<span class="title"></span>
@@ -65,7 +65,7 @@
             <img src="/img/img5.jpg" class="img-fuild image-home-2" />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="container">
         <h3 class="text-center title-category">
@@ -74,7 +74,7 @@
         <div class="row">
           <div class="list">
             <router-link :to="{ name: 'Product2' }" @click="scrollToTop">
-              <p class="text-footer">Xem tất cả sản phẩm</p>
+              <p class="p">Xem tất cả sản phẩm</p>
             </router-link>
           </div>
         </div>
@@ -93,32 +93,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="container">
-    <div class="row image-home">
-      <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="/img/hinhanh.png" class="card-img-top" alt="..." />
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="/img/tủ.png" class="card-img-top" alt="..." />
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="/img/mau-tron.png" class="card-img-top" alt="..." />
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem">
-          <img src="/img/home-2.png" class="card-img-top" alt="..." />
-        </div>
-      </div>
-    </div>
-  </div> -->
-
       <section id="services" class="services section-padding">
         <div class="container">
           <div class="row">
@@ -276,7 +250,7 @@ h6 {
   color: white;
 }
 h3 {
-  color: white;
+  color: aqua;
 }
 
 .services {
@@ -357,7 +331,6 @@ h3 {
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
-  height: 350px;
   width: 270px;
 }
 
@@ -386,31 +359,10 @@ h3 {
   transform: scale(1.1);
 }
 
-.card-content {
-  padding: 20px;
-  /* z-index: 2; */
-  /* Đặt chỉ số z để đảm bảo nội dung nằm phía trên hình ảnh */
-}
-
-.card-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 .card-text {
   font-size: 16px;
   color: #555555;
 }
-
-/* .title {
-    color: #04AA6D;
-} */
-
-.img {
-  height: 400px;
-  width: 400px;
-}
-
 h3 {
   font-weight: bold;
 }
@@ -518,5 +470,8 @@ h3 {
 }
 h6 {
   color: black;
+}
+.p {
+  text-decoration-line: none;
 }
 </style>

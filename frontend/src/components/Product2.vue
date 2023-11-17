@@ -1,6 +1,11 @@
 <template>
   <body>
     <div class="bg">
+      <div class="demo">
+        <video controls autoplay muted none id="myVideo">
+          <source src="/img/3.webm" />
+        </video>
+      </div>
       <div class="grid wide container">
         <div class="row sort justify-content-end">
           <div class="custom-select" style="width: 400px; heigh: 200px">
@@ -248,7 +253,13 @@ export default {
     #fefefe 100%
   );
 }
-
+.demo {
+  /* background-color: white; */
+}
+.demo video {
+  width: 100%;
+  height: 500px;
+}
 .wrapper-img {
   width: inherit;
   height: 200px;
