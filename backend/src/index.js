@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const handlebars = require("express-handlebars");
 
 const app = express();
-const port = 4000;
+const port = 4001;
 const config = require("./app/config/index");
 const MongoDB = require("./app/utils/mongodb.util");
 
