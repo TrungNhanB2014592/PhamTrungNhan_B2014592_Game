@@ -116,33 +116,26 @@
           <div>
             <p>PHƯƠNG THỨC THANH TOÁN</p>
 
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                v-model="paymentMethod"
-                value="online"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Thanh toán online
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
-                checked
-                v-model="paymentMethod"
-                value="thanh toán khi nhận hàng"
-              />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Thanh toán khi nhận hàng
-              </label>
-            </div>
+            <div class="checkout-page">
+    
+          <!-- Các phần thanh toán khác của bạn -->
+          
+          <!-- Chọn phương thức thanh toán -->
+          <div>
+            <label>
+              <input type="radio" value="thanh toán khi nhận hàng" v-model="paymentMethod" /> Thanh toán khi nhận hàng
+            </label>
+            <label>
+              <input type="radio" value="paypal" v-model="paymentMethod" /> PayPal
+            </label>
+          </div>
+
+          <!-- Thêm nút thanh toán PayPal -->
+          <div v-if="paymentMethod === 'paypal'">
+            <PaypalButton />
+          </div>
+        </div>
+          
           </div>
 
           <hr />
@@ -168,10 +161,14 @@ import { useRouter } from "vue-router";
 import UserService from "@/services/user.service";
 import CartService from "@/services/cart.service";
 import OrderService from "@/services/order.service";
+import PaypalButton from '../components/PaypalButton.vue';
 import moment from "moment";
 
 export default {
   name: "Checkout",
+  components: {
+    PaypalButton
+  },
 
   setup() {
     const router = useRouter();
@@ -359,7 +356,11 @@ export default {
   width: 150px;
   height: 150px;
 }
-
+.checkout-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 .row {
   display: -ms-flexbox;
   /* IE10 */

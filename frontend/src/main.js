@@ -4,6 +4,7 @@ import router from './router/index.js'
 import { createApp } from 'vue'
 
 
+// import router from './router';
 
 import App from './App.vue'
 
@@ -15,3 +16,7 @@ const pinia = createPinia();
 app.use(router);
 app.use(pinia); // Sử dụng Pinia
 app.mount('#app');
+
+createApp(App)
+  .use(router)
+  .mount('#app');

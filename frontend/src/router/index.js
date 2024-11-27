@@ -1,8 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AdminRouter from './AdminRouter.js';
 import HomeRouter from './HomeRouter.js';
+import PaypalButton from '../components/PaypalButton.vue';
+import DetailProduct from '../components/DetailProduct.vue';
 
-const routes = [...AdminRouter, ...HomeRouter];
+const routes = [  { path: '/payment', component: PaypalButton },{
+    path: '/product/:id',
+    name: 'DetailProduct',
+    component: DetailProduct
+}, 
+    ...AdminRouter, ...HomeRouter];
 
 const router = createRouter({
     history: createWebHistory(),

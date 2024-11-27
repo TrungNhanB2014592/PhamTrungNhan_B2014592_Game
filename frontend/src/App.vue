@@ -1,12 +1,19 @@
 <template>
-  <router-view></router-view>
+  <div id="app">
+    
+    <router-view></router-view>
+    
+  </div>
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router';
-export default {
+import PaypalButton from './components/PaypalButton.vue';
 
-}
+export default {
+  components: {
+    PaypalButton
+  }
+};
 </script>
 
 <style>
