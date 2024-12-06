@@ -8,11 +8,11 @@
       />
       <div class="card-body text-center">
         <p class="card-text">Chưa có sản phẩm nào trong giỏ hàng.</p>
-        <router-link to="/product2"
-          ><button class="btn btn-danger">
+        <router-link to="/product2">
+          <button class="btn btn-danger">
             TIẾP TỤC MUA SẮM NHÉ!
-          </button></router-link
-        >
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -37,7 +37,6 @@
             <td></td>
             <td>
               <img
-                :key="image"
                 :src="`http://localhost:4001/images/${item.images}`"
                 :alt="item.productname"
                 class="product-image"
@@ -87,11 +86,11 @@
             <td></td>
             <td></td>
             <td>
-              <router-link :to="{ name: 'Checkout', params: { id: userId } }"
-                ><button class="btn btn-danger" @click="handleCheckout">
+              <router-link :to="{ name: 'Checkout', params: { id: userId } }">
+                <button class="btn btn-danger" @click="handleCheckout">
                   Thanh Toán
-                </button></router-link
-              >
+                </button>
+              </router-link>
             </td>
           </tr>
         </tbody>
@@ -124,29 +123,27 @@ export default {
 
     totalPrice() {
       const totalPrice = this.cartItems.reduce((total, item) => {
-        const itemPrice = parseFloat(item.price.replace(/\s/g, "")); // Xóa khoảng trắng và chuyển đổi giá tiền thành số
-        const itemQuantity = parseInt(item.quantity); // Chuyển đổi số lượng thành số nguyên
+        const itemPrice = parseFloat(item.price.replace(/\s/g, ""));
+        const itemQuantity = parseInt(item.quantity);
         return total + itemPrice * itemQuantity;
       }, 0);
 
-      return totalPrice.toLocaleString("vi-VN").replace(/,/g, " "); // Định dạng số với dấu phân cách và thay thế dấu phân cách bằng khoảng trắng
+      return totalPrice.toLocaleString("vi-VN").replace(/,/g, " ");
     },
 
     subtotalPrice() {
       return this.cartItems.map((item) => {
-        const itemPrice = parseFloat(item.price.replace(/\s/g, "")); // Xóa khoảng trắng và chuyển đổi giá tiền thành số
-        const itemQuantity = parseInt(item.quantity); // Chuyển đổi số lượng thành số nguyên
+        const itemPrice = parseFloat(item.price.replace(/\s/g, ""));
+        const itemQuantity = parseInt(item.quantity);
 
         const totalPrice = itemPrice * itemQuantity;
-        console.log("totalprice", totalPrice);
-        return totalPrice.toLocaleString("vi-VN").replace(/,/g, " "); // Định dạng số với dấu phân cách và thay thế dấu phân cách bằng khoảng trắng
+        return totalPrice.toLocaleString("vi-VN").replace(/,/g, " ");
       });
     },
   },
 
   methods: {
     async increaseQuantity(item) {
-      // Tăng giá trị quantity của item lên 1
       item.quantity++;
       const userId = localStorage.getItem("userId");
       const response = await CartService.updateCart(
@@ -161,12 +158,9 @@ export default {
     },
 
     async decreaseQuantity(item) {
-      // Giảm giá trị quantity của item xuống 1
       if (item.quantity > 1) {
         item.quantity--;
         const userId = localStorage.getItem("userId");
-        console.log("soluong", item.quantity);
-        console.log("item.productId", item.productId);
         const response = await CartService.updateCart(
           userId,
           item.productId,
@@ -182,8 +176,11 @@ export default {
     async getCart() {
       try {
         const userId = localStorage.getItem("userId");
-        const response = await CartService.getCart(userId); // Thay đổi đường dẫn API tùy thuộc vào cấu trúc của ứng dụng của bạn
+        const response = await CartService.getCart(userId);
         this.cartItems = response;
+
+        // Cập nhật lại totalQuantity khi giỏ hàng thay đổi
+        this.updateTotalQuantity();
       } catch (error) {
         console.error(error);
       }
@@ -193,14 +190,23 @@ export default {
       try {
         const userId = localStorage.getItem("userId");
         const productId = item.productId;
-        const response = await CartService.deleteCart(userId, productId); // Thay đổi đường dẫn API tùy thuộc vào cấu trúc của ứng dụng của bạn
+        const response = await CartService.deleteCart(userId, productId);
         if (response.status === 200) {
           alert("Xóa sản phẩm trong giỏ hàng thành công!");
-          this.getCart();
+          await this.getCart(); // Lấy lại giỏ hàng mới sau khi xóa
         }
       } catch (error) {
-        console.error("Lỗi", error);
+        console.error("Lỗi xóa sản phẩm", error);
       }
+    },
+
+    updateTotalQuantity() {
+      this.totalQuantity = this.cartItems.reduce(
+        (total, item) => total + parseInt(item.quantity),
+        0
+      );
+      const cartStore = useCartStore();
+      cartStore.setTotalQuantity(this.totalQuantity); // Cập nhật số lượng sản phẩm trong store
     },
   },
 
@@ -211,13 +217,7 @@ export default {
   watch: {
     cartItems: {
       handler(newCartItems) {
-        this.totalQuantity = newCartItems.reduce(
-          (total, item) => total + parseInt(item.quantity),
-          0
-        ); //parseInt chuyen doi chuoi thanh so
-        const cartStore = useCartStore();
-        cartStore.setTotalQuantity(this.totalQuantity);
-        console.log("quantity", this.totalQuantity); // Gọi mutation để cập nhật biến totalQuantity trong store cart
+        this.updateTotalQuantity();
       },
       immediate: true,
     },
@@ -250,7 +250,6 @@ export default {
   width: 250px;
   margin: 30px 0;
   align-items: center;
-  /* height: 250px; */
 }
 
 .card-nocart {

@@ -2,7 +2,7 @@
     <div class="container">
         <h3>Quản lý danh mục</h3>
 
-        <button @click="addCategory" class="btn btn-success">Thêm danh mục</button>
+        <button @click="addCategory" class="btn btn-1">Thêm danh mục</button>
 
         <div class="row category">
 
@@ -78,5 +78,11 @@ h3 {
     text-align: center;
     font-weight: bold;
     margin-top: 30px;
+}
+.btn-1{
+    background-color:#c6d4df;
+}
+.btn-1:hover{
+    color: rgb(215, 79, 25);
 }
 </style>

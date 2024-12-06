@@ -87,6 +87,7 @@
         </div>
       </div>
     </div>
+    <hr>
   </body>
 </template>
 
@@ -244,7 +245,7 @@ export default {
 </script>
 
 <style scoped>
-.bg {
+/* .bg {
   background: linear-gradient(
     182deg,
     rgba(254, 185, 158, 0) 10%,
@@ -252,7 +253,7 @@ export default {
     rgba(255, 250, 249, 0.59) 80.2%,
     #fefefe 100%
   );
-}
+} */
 .demo {
   /* background-color: white; */
 }
@@ -303,21 +304,21 @@ li p {
 li p:hover {
   /* background-color: #db7093; */
   font-weight: bold;
-  color: #04aa6d;
+  color: #bd5727;
 }
 
 li p::after {
   content: "";
   width: 0;
   height: 3px;
-  background-color: #04aa6d;
-  color: #04aa6d;
+  background-color: #d15c0e;
+  color: #aa4104;
   margin: auto;
   display: block;
 }
 
 .active-category {
-  background-color: #04aa6d;
+  background-color: #b46d2b;
   color: white;
 }
 
@@ -403,7 +404,7 @@ li p::after {
   text-align: right;
   margin-top: 30px;
 }
-body {
+/* body {
   background: linear-gradient(
     182deg,
     rgba(254, 185, 158, 0) 10%,
@@ -411,5 +412,5 @@ body {
     rgba(255, 250, 249, 0.59) 80.2%,
     #fefefe 100%
   );
-}
+} */
 </style>

@@ -32,7 +32,10 @@
             <div class="col-lg-6 col-md-6 col-sm-6 admin">
                 <!-- <div class="d-flex text-center"> -->
                 <h5>Nhân Viên</h5>
-                <h6><router-link to="/admin/register">Tạo tài khoản cho nhân viên</router-link></h6>
+                <h6>
+  <router-link to="/admin/register" class="custom-link">Tạo tài khoản cho nhân viên</router-link>
+</h6>
+
                 <!-- </div> -->
 
                 <table class="table table-hover table-bordered">
@@ -131,4 +134,18 @@ h6 {
 .customer-table {
     margin: 37px 0;
 }
+.custom-link {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: #007bff; /* Màu chữ */
+  transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+
 </style>

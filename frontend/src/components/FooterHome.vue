@@ -18,12 +18,12 @@
                 </li>
                 <li>
                   <p class="text-footer">
-                    <i class="bi bi-envelope-fill"></i> dreamhouse@gmail.com
+                    <i class="bi bi-envelope-fill"></i> PTNGame@gmail.com
                   </p>
                 </li>
                 <li>
                   <p class="text-footer">
-                    <i class="bi bi-telephone-fill"></i> 0708970924
+                    <i class="bi bi-telephone-fill"></i> 0705181811
                   </p>
                 </li>
               </ul>
@@ -121,12 +121,12 @@ export default {
 </script>
 <style scoped>
 footer {
-  background: linear-gradient(
+  /* background: linear-gradient(
     0deg,
     #f05c22 -128.33%,
     rgba(240, 92, 34, 0) 100%
   );
-  padding-top: 1.5cm;
+  padding-top: 1.5cm; */
   /* padding-bottom: 3cm; */
 }
 h5 {
@@ -140,7 +140,7 @@ h5 {
 
 .title-footer,
 .title-footer {
-  color: aquamarine;
+  color: black;
   font-weight: 700;
 }
 
@@ -150,7 +150,7 @@ h5 {
 }
 
 .hr-footer {
-  color: white;
+  color: black;
 }
 
 .icon-footer li,

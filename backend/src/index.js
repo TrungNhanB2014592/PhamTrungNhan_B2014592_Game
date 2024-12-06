@@ -17,8 +17,11 @@ const productsRouter = require("./routes/product.route");
 const usersRouter = require("./routes/user.route");
 const loginRouter = require("./routes/login.route");
 const registerRouter = require("./routes/register.route");
+const reviewRoutes = require('./routes/reviews.route');
 const ApiError = require("./app/api-error");
-
+const router = express.Router();
+router.use('/reviews', reviewRoutes);
+module.exports = router;
 async function startServer() {
   try {
     await MongoDB.connect(config.db.uri);

@@ -3,7 +3,7 @@
         <div class="row total">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="manage d-flex border">
-                    <div><i class="bi bi-database icon icon-product"></i></div>
+                    <div><i class="bi bi-person-rolodex icon icon-product"></i></div>
                     <div class="content">
                         <h6 class="title">TỔNG SẢN PHẨM</h6>
                         <p class="text">{{ productCount }} sản phẩm</p>
@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="manage d-flex border">
-                    <div><i class="bi bi-cart3 icon icon-order"></i></div>
+                    <div><i class="bi bi-boxes icon icon-order"></i></div>
                     <div class="content">
                         <h6 class="title">TỔNG ĐƠN HÀNG</h6>
                         <p class="text">{{ orderCount }} đơn hàng</p>
@@ -23,18 +23,18 @@
                 </div>
 
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="manage d-flex border">
-                    <div><i class="bi bi-person-circle icon icon-user"></i></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 ">
+                <div class="manage d-flex border ">
+                    <div><i class="bi bi-people icon icon-user "></i></div>
                     <div class="content">
-                        <h6 class="title">TỔNG KHÁCH HÀNG</h6>
+                        <h6 class="title">TỔNG KHÁCH </h6>
                         <p class="text">{{ userCount }} khách hàng</p>
                     </div>
 
                 </div>
 
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6 ">
                 <div class="manage d-flex border">
                     <div><i class="bi bi-coin icon icon-money"></i></div>
                     <div class="content">
@@ -137,6 +137,7 @@ export default {
 .manage {
     overflow: hidden;
     padding: 30px 5px;
+    background-color: #c6d4df;
 }
 
 .content {
@@ -174,5 +175,6 @@ export default {
 
 .total {
     margin: 30px 0;
+    
 }
 </style>

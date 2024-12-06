@@ -187,7 +187,7 @@ export default defineComponent({
 }
 
 .bg {
-  background-color: white;
+  background-color: #c6d4df;
 }
 
 .nav-content ul,
@@ -215,7 +215,7 @@ export default defineComponent({
 }
 
 .nav-content li .nav-link:hover {
-  color: #04aa6d;
+  color: rgb(215, 79, 25);
 }
 
 .nav-content li .nav-link::after,
@@ -223,7 +223,7 @@ export default defineComponent({
   content: "";
   width: 0;
   height: 3px;
-  background-color: #04aa6d;
+  background-color: rgb(215, 79, 25);
   margin: auto;
   display: block;
 }

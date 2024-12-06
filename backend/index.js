@@ -1,32 +1,26 @@
-require('dotenv').config(); // Load biến môi trường từ file .env
+require('dotenv').config();
 const express = require('express');
 const paypal = require('paypal-rest-sdk');
 const bodyParser = require('body-parser');
 const path = require('path');
-const MongoDB = require('./node_modules/mongodb'); 
+const mongoose = require('mongoose'); 
 const reviewRoutes = require('./src/routes/reviews');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); // Use cors
+const uri = 'mongodb://127.0.0.1:27017/Game'; 
 
-const uri = 'mongodb://127.0.0.1:27017/Game'; // Thay thế bằng chuỗi kết nối MongoDB của bạn
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error(`Error connecting to MongoDB: ${err.message}`));
 
-MongoDB.connect(uri).then(client => {
-    console.log('Connected to MongoDB');
-    const db = client.db('Game'); // Thay thế bằng tên cơ sở dữ liệu của bạn
-
-    app.use((req, res, next) => {
-        req.db = db; // Đính kèm đối tượng db vào req để có thể sử dụng trong các route
-        next();
-    });
-  });
 paypal.configure({
-  'mode': 'sandbox', // Thay đổi thành 'live' khi bạn sẵn sàng cho môi trường thực
+  'mode': 'sandbox', 
   'client_id': process.env.PAYPAL_CLIENT_ID,
   'client_secret': process.env.PAYPAL_SECRET_KEY
 });
 
-// Endpoint để tạo Payment
 app.post('/create-payment', (req, res) => {
   const create_payment_json = {
     "intent": "sale",
@@ -55,10 +49,10 @@ app.post('/create-payment', (req, res) => {
   });
 });
 
-// Phục vụ các file tĩnh
+app.use('/api', reviewRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Khởi động server trên cổng 4001
-app.listen(4001, () => {
-  console.log('Server is running on port 4001');
+const port = process.env.PORT || 4001;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });

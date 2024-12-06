@@ -78,51 +78,17 @@
       </div>
     </div>
   </div>
-  <div class="product-detail">
-    <h2>{{ product.name }}</h2>
-    <!-- Hiển thị thông tin sản phẩm -->
-
-    <ReviewForm :productId="product._id" :userId="userId" @review-submitted="fetchReviews" />
-    <ReviewList :productId="product._id" />
-  </div>
 </template>
 
 <script>
 import ProductService from "@/services/product.service";
 import CartService from "@/services/cart.service";
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router'; 
-import ReviewForm from './ReviewForm.vue';
-import ReviewList from './ReviewList.vue';
+
 import { useAuthStore } from "../stores/auth";
 
 export default {
   name: "DetailProduct",
-  components: {
-    ReviewForm,
-    ReviewList
-  },
-  setup() {
-    const product = ref(null);
-    const userId = ref('product.productname'); // Thay thế bằng cách lấy userId thực từ ứng dụng của bạn
 
-    const fetchProduct = async () => {
-      const response = await ProductService.getProductById('product.images'); // Thay thế bằng cách lấy productId thực
-      product.value = response.data;
-    };
-
-    const fetchReviews = async () => {
-      // Logic để lấy lại danh sách đánh giá sau khi thêm mới
-    };
-
-    onMounted(fetchProduct);
-
-    return {
-      product,
-      userId,
-      fetchReviews
-    };
-  },
   data() {
     return {
       product: "",
@@ -292,9 +258,7 @@ export default {
   color: darkorange;
   font-weight: 700;
 }
-.product-detail {
-  margin: 20px;
-}
+
 .item-image {
   width: 250px;
   height: 250px;

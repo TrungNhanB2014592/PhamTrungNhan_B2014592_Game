@@ -155,7 +155,7 @@ export default {
       } else {
         this.showError = false;
         axios
-          .post("http://localhost:/api/register/admin", {
+          .post("http://localhost:4001/api/register/admin", {
             adminname: this.adminname,
             email: this.email,
             password: this.password,

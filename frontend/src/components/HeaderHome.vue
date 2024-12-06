@@ -1,5 +1,5 @@
 <template>
-  <header class="nav-top test-2">
+  <header class="">
     <nav class="navbar navbar-expand-lg text-white">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
@@ -149,6 +149,7 @@
         </ul>
       </div>
     </nav>
+    <hr class="hr-header"/>
   </header>
 </template>
 
@@ -252,18 +253,24 @@ export default {
 };
 </script>
 <style scoped>
+
 .test-2 {
-  /* color: white; */
+  
   background: white;
 }
-
+.hr-header {
+  color: black;
+  margin-top: -13px;
+}
 .auth {
   color: white;
 }
 .nav-link {
-  color: aquamarine;
+  color: rgb(16, 17, 17);
 }
-
+.nav-link:hover{
+  color: rgb(215, 79, 25);
+}
 .icon-phone {
   font-size: 35px;
 }
@@ -276,7 +283,7 @@ export default {
 }
 .logo img {
   width: 170px;
-  background-color: beige;
+  background-color: #c6d4df;
 }
 .btn:hover {
   color: aquamarine;

@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div>
     <div class="bg">
       <div id="slider">
         <div class="slider">
@@ -143,7 +143,8 @@
         </div>
       </section>
     </div>
-  </body>
+  </div>
+  <hr class="hr-home">
 </template>
 
 <script>
@@ -228,7 +229,7 @@ setInterval(function () {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
-.bg {
+/* .bg {
   background: linear-gradient(
     182deg,
     rgba(254, 185, 158, 0) 10%,
@@ -236,7 +237,7 @@ setInterval(function () {
     rgba(255, 250, 249, 0.59) 80.2%,
     #fefefe 100%
   );
-}
+} */
 body {
   background: linear-gradient(
     182deg,
@@ -250,7 +251,7 @@ h6 {
   color: white;
 }
 h3 {
-  color: aqua;
+  color: black;
 }
 
 .services {
@@ -473,5 +474,17 @@ h6 {
 }
 .p {
   text-decoration-line: none;
+}
+.list .p { 
+  display: inline-block; 
+  padding: 10px 20px;
+   background-color: rgb(215, 79, 25); 
+   color: white; border-radius: 
+   5px; text-decoration: none; 
+   transition: background-color 0.3s ease; 
+} 
+.list .p:hover { 
+  background-color: #e64a19; 
+  color: white;
 }
 </style>

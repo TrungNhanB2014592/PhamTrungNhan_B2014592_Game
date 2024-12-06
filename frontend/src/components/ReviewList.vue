@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
       <h3>Đánh giá</h3>
       <div v-for="review in reviews" :key="review._id" class="review">
@@ -49,4 +49,4 @@
     padding: 10px 0;
   }
   </style>
-  
+   -->
